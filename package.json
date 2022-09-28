@@ -1,0 +1,23 @@
+{
+  "name": "jiaji_sun_thesis_project",
+  "version": "1.0.0",
+  "description": "This is my thesis project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipsun-cu/jiaji_sun_thesis_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philipsun-cu/jiaji_sun_thesis_project/issues"
+  },
+  "homepage": "https://github.com/philipsun-cu/jiaji_sun_thesis_project#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
