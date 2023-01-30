@@ -7,10 +7,11 @@
     "node": "v16.17.1"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build"
+    "start": "nodemon node server/index.js",
+    "build": "cd client && npm install && npm run build",
+    "build-react": "cd client && npm run build",
+    "dev-react": "cd client && npm run start"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/philipsun-cu/jiaji_sun_thesis_project.git"
@@ -24,5 +25,8 @@
   "homepage": "https://github.com/philipsun-cu/jiaji_sun_thesis_project#readme",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
