@@ -8,7 +8,7 @@ import "leaflet/dist/leaflet.css";
 //import ExternalInfo from "components/ExternalInfo";
 
 const BasicMap = () => {
-    const [center, setCenter] = useState({ lat: 13.084622, lng: 80.248357 });
+    const [center, setCenter] = useState({ lat: 40.0150, lng: -105.2705 });
     const ZOOM_LEVEL = 9;
     const mapRef = useRef();
 
@@ -37,7 +37,8 @@ const BasicMap = () => {
 };
 
 const mapStyle = {
-    height: 600
+    height: 700
+
 }
 
 export default BasicMap;
