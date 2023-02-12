@@ -1,11 +1,20 @@
 import React, { useRef, useState } from 'react';
 //import Header from "components/Header";
+import L from "leaflet";
 
-import { Map, MapContainer, TileLayer } from "react-leaflet";
+import { Map, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import osm from "./osm-providers";
 //import { useRef } from "react";
 import "leaflet/dist/leaflet.css";
 //import ExternalInfo from "components/ExternalInfo";
+import locations from "./locations.json";
+
+const markerIcon = new L.Icon({
+    iconUrl: require("../resources/images/marker.png"),
+    iconSize: [40, 40],
+    iconAnchor: [17, 46], //[left/right, top/bottom]
+    popupAnchor: [0, -46], //[left/right, top/bottom]
+  });
 
 const BasicMap = () => {
     const [center, setCenter] = useState({ lat: 40.0077811, lng: -105.2699333 });
@@ -28,6 +37,20 @@ const BasicMap = () => {
                                 url={osm.maptiler.url}
                                 attribution={osm.maptiler.attribution}
                             />
+
+                            {locations.map((location, idx) => (
+                                <Marker
+                                    position={[location.lat, location.lng]}
+                                    icon={markerIcon}
+                                    key={idx}
+                                >
+                                    <Popup>
+                                        <b>
+                                            {location.Building}
+                                        </b>
+                                    </Popup>
+                                </Marker>
+                            ))}
                         </MapContainer>
                     </div>
                 </div>
