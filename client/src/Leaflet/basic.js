@@ -17,6 +17,13 @@ const markerIcon = new L.Icon({
     popupAnchor: [0, -46], //[left/right, top/bottom]
   });
 
+const mylocation = new L.Icon({
+    iconUrl: require("../resources/images/mylocation.png"),
+    iconSize: [20, 20],
+    iconAnchor: [17, 46], //[left/right, top/bottom]
+    popupAnchor: [0, -46], //[left/right, top/bottom]
+});
+
 const BasicMap = () => {
     const [center, setCenter] = useState({ lat: 40.0077811, lng: -105.2699333 });
     const ZOOM_LEVEL = 17;
@@ -36,6 +43,7 @@ const BasicMap = () => {
         }
     }
 
+
     return (
         <>
             {/* <Header title="React Leaflet Map Example" />
@@ -54,7 +62,7 @@ const BasicMap = () => {
                             />
                             {location.loaded && !location.error && (
                                 <Marker 
-                                   icon={markerIcon}
+                                   icon={mylocation}
                                    position={[
                                         location.coordinates.lat, 
                                         location.coordinates.lng
@@ -78,6 +86,13 @@ const BasicMap = () => {
                     </div>
                 </div>
             </div>
+
+            <div>
+                <button onClick={showmyLocation}>
+                    My location
+                </button>
+            </div>
+
         </>
     );
 };
