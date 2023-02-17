@@ -33,7 +33,8 @@ const BasicMap = () => {
 
     const showmyLocation = () => {
         if ( location.loaded && !location.error){
-            mapRef.current.leafletElement.flyTo(
+            console.log(mapRef.current)
+            mapRef.current.flyTo(
                 [location.coordinates.lat, location.coordinates.lng],
                 ZOOM_LEVEL,
                 {animate: true}
@@ -87,7 +88,7 @@ const BasicMap = () => {
                 </div>
             </div>
 
-            <div>
+            <div className='mylocation'>
                 <button onClick={showmyLocation}>
                     My location
                 </button>

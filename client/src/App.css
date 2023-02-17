@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.leaflet-container {
+  height: 600px;
+  width: 100%;
+}
+
+.mylocation{
+
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1000;
+
+}
+
+.leaflet-control-container .leaflet-left {
+  left: auto;
+  right: 0;
+}
