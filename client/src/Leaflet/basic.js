@@ -24,12 +24,28 @@ const mylocation = new L.Icon({
     popupAnchor: [0, -46], //[left/right, top/bottom]
 });
 
+
+
+
+
 const BasicMap = () => {
     const [center, setCenter] = useState({ lat: 40.0077811, lng: -105.2699333 });
     const ZOOM_LEVEL = 17;
     const mapRef = useRef();
 
     const location = userGeoLocation();
+
+
+    const showdirection = () => {
+
+        L.mapquest.key = '47Huk3i0pcrQtGdWGC6JZNdGOVplZN1e';
+
+        L.mapquest.map('mapRef', {
+            center: [50.7749, -110.4194],
+            layers: L.mapquest.tileLayer('mapRef'),
+            zoom: 12
+            });
+    }
 
     const showmyLocation = () => {
         if ( location.loaded && !location.error){
@@ -57,6 +73,12 @@ const BasicMap = () => {
                     <p>Loading basic map using layer from maptiler</p>
                     <div className="col">
                         <MapContainer style={mapStyle} center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
+
+
+
+
+
+
                             <TileLayer
                                 url={osm.maptiler.url}
                                 attribution={osm.maptiler.attribution}
@@ -91,6 +113,12 @@ const BasicMap = () => {
             <div className='mylocation'>
                 <button onClick={showmyLocation}>
                     My location
+                </button>
+            </div>
+
+            <div className='direction'>
+                <button onClick={showdirection}>
+                    Direction
                 </button>
             </div>
 
