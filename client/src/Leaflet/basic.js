@@ -10,9 +10,6 @@ import "leaflet/dist/leaflet.css";
 import locations from "./locations.json";
 import userGeoLocation from "./userGeoLocation";
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-
-
 const markerIcon = new L.Icon({
     iconUrl: require("../resources/images/marker.png"),
     iconSize: [40, 40],
@@ -86,20 +83,6 @@ const BasicMap = () => {
                                     </Popup>
                                 </Marker>
                             ))}
-                            <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js">
-                            L.Routing.control(
-                                waypoints: [
-                                    L.latLng(50.74, -110.94),
-                                    L.latLng(70.6792, -100.949)
-                                ]
-                                ).addTo(map);
-                            </script>
-                            {/* L.Routing.control(
-                                waypoints: [
-                                    L.latLng(50.74, -110.94),
-                                    L.latLng(70.6792, -100.949)
-                                ]
-                                ).addTo(map); */}
                         </MapContainer>
                     </div>
                 </div>
