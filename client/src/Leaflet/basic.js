@@ -38,13 +38,29 @@ const BasicMap = () => {
 
     const showdirection = () => {
 
-        L.mapquest.key = '47Huk3i0pcrQtGdWGC6JZNdGOVplZN1e';
 
-        L.mapquest.map('mapRef', {
-            center: [50.7749, -110.4194],
+
+        var map = L.mapquest.map('mapRef', {
+            center: [37.7749, -122.4194],
             layers: L.mapquest.tileLayer('mapRef'),
-            zoom: 12
-            });
+            zoom: 12,
+            key: '47Huk3i0pcrQtGdWGC6JZNdGOVplZN1e'
+          });
+          
+          var marker = L.marker([37.7749, -122.4194]).addTo(map);
+
+
+          marker.bindPopup('<b>Boulder</b><br>City of Colorado.');
+
+
+
+        // L.mapquest.key = '47Huk3i0pcrQtGdWGC6JZNdGOVplZN1e';
+
+        // L.mapquest.map('mapRef', {
+        //     center: [50.7749, -110.4194],
+        //     layers: L.mapquest.tileLayer('mapRef'),
+        //     zoom: 12
+        //     });
     }
 
     const showmyLocation = () => {
