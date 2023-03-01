@@ -51,15 +51,6 @@
 
 }
 
-.direction{
-
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  z-index: 1000;
-
-}
-
 .leaflet-control-container .leaflet-left {
   left: auto;
   right: 0;
