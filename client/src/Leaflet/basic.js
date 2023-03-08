@@ -9,9 +9,22 @@ import "leaflet/dist/leaflet.css";
 //import ExternalInfo from "components/ExternalInfo";
 import locations from "./locations.json";
 import userGeoLocation from "./userGeoLocation";
+import reports from "./reports.json";
+
+
+fetch("http://localhost:3001/api")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
 const markerIcon = new L.Icon({
     iconUrl: require("../resources/images/marker.png"),
+    iconSize: [40, 40],
+    iconAnchor: [17, 46], //[left/right, top/bottom]
+    popupAnchor: [0, -46], //[left/right, top/bottom]
+  });
+
+  const reportIcon = new L.Icon({
+    iconUrl: require("../resources/images/reports.png"),
     iconSize: [40, 40],
     iconAnchor: [17, 46], //[left/right, top/bottom]
     popupAnchor: [0, -46], //[left/right, top/bottom]
@@ -78,12 +91,30 @@ const BasicMap = () => {
                                 >
                                     <Popup>
                                         <b>
-                                            {location.Building}
+                                        {location.Building}
                                         </b>
+                                    </Popup>
+                                </Marker>
+                                
+                            ))}
+                            {reports.map((r_location, r_idx) => (
+                                <Marker
+                                    position={[r_location.lat, r_location.lng]}
+                                    icon={reportIcon}
+                                    key={r_idx}
+                                >
+                                    <Popup>
+                                        <b>
+                                            {r_location.Road}
+                                        </b>
+                                            <br></br>
+                                            {r_location.report}
+                                        
                                     </Popup>
                                 </Marker>
                             ))}
                         </MapContainer>
+
                     </div>
                 </div>
             </div>

@@ -1,0 +1,21 @@
+[
+    {
+        "Road": "18 St",
+        "lat": "40.007601",
+        "lng": "-105.269535",
+        "report": "snow on the sidewalk."
+    },
+    {
+        "Road": "Colorado Ave",
+        "lat": "40.008253",
+        "lng": "-105.268289",
+        "report": "snow on the sidewalk."
+    },
+    {
+        "Road": "Baker Dr",
+        "lat": "40.006549",
+        "lng": "-105.267171",
+        "report": "snow on the road."
+    }
+
+]
