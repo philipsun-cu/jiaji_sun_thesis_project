@@ -5,6 +5,10 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+const fs = require('fs');
+var json = fs.readFileSync('./client/src/Leaflet/reports.json','utf8');
+
+
 const cors = require('cors');
 app.use(cors({
     origin: '*'
@@ -17,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api", (req, res) => {
-  res.json({ message: "Hello from Jiaji!" });
+  res.json({ json });
 });
 
 app.listen(PORT, () => {

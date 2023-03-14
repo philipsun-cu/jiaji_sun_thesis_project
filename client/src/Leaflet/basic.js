@@ -12,9 +12,16 @@ import userGeoLocation from "./userGeoLocation";
 import reports from "./reports.json";
 
 
-fetch("http://localhost:3001/api")
+
+
+fetch('http://localhost:3001/api')
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) => {
+    console.log(data);
+    })
+  .catch((error)=>{
+    console.error(error);
+  })
 
 const markerIcon = new L.Icon({
     iconUrl: require("../resources/images/marker.png"),
