@@ -9,15 +9,16 @@ import "leaflet/dist/leaflet.css";
 //import ExternalInfo from "components/ExternalInfo";
 import locations from "./locations.json";
 import userGeoLocation from "./userGeoLocation";
-import reports from "./reports.json";
+// import reports from "./reports.json";
 
 
+let reports = [];
 
-
-fetch('http://localhost:3001/api')
+fetch('http://localhost:3001/api/reports')
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
+    reports = data;
     })
   .catch((error)=>{
     console.error(error);

@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 const fs = require('fs');
-var json = fs.readFileSync('./client/src/Leaflet/reports.json','utf8');
 
 
 const cors = require('cors');
@@ -20,8 +19,10 @@ app.get("/", (req, res) => {
   res.send("Hello from frontend!");
 });
 
-app.get("/api", (req, res) => {
-  res.json({ json });
+app.get("/api/reports", (req, res) => {
+  var json = fs.readFileSync('./client/src/Leaflet/reports.json','utf8');
+
+  res.json( JSON.parse(json,null,2) );
 });
 
 app.listen(PORT, () => {
