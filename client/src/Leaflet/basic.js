@@ -7,12 +7,13 @@ import osm from "./osm-providers";
 //import { useRef } from "react";
 import "leaflet/dist/leaflet.css";
 //import ExternalInfo from "components/ExternalInfo";
-import locations from "./locations.json";
+//import locations from "./locations.json";
 import userGeoLocation from "./userGeoLocation";
 // import reports from "./reports.json";
 
 
 let reports = [];
+let locations = [];
 
 fetch('http://localhost:3001/api/reports')
   .then((response) => response.json())
@@ -23,6 +24,23 @@ fetch('http://localhost:3001/api/reports')
   .catch((error)=>{
     console.error(error);
   })
+
+  fetch('http://localhost:3001/api/locations')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    locations = data;
+    })
+  .catch((error)=>{
+    console.error(error);
+  })
+
+
+ 
+
+
+
+
 
 const markerIcon = new L.Icon({
     iconUrl: require("../resources/images/marker.png"),
@@ -127,15 +145,31 @@ const BasicMap = () => {
                 </div>
             </div>
 
+            <div className='r_form'>
+               <button>
+                     click here
+                </button>
+            </div>
+
+
+
+
+
+
+
+
             <div className='mylocation'>
                 <button onClick={showmyLocation}>
                     My location
                 </button>
             </div>
 
+
         </>
     );
 };
+
+
 
 const mapStyle = {
     height: 690

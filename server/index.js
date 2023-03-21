@@ -20,9 +20,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/reports", (req, res) => {
-  var json = fs.readFileSync('./client/src/Leaflet/reports.json','utf8');
+  var r_json = fs.readFileSync('./client/src/Leaflet/reports.json','utf8');
 
-  res.json( JSON.parse(json,null,2) );
+  res.json( JSON.parse(r_json,null,2) );
+});
+
+app.get("/api/locations", (req, res) => {
+  var l_json = fs.readFileSync('./client/src/Leaflet/locations.json','utf8');
+
+  res.json( JSON.parse(l_json,null,2) );
 });
 
 app.listen(PORT, () => {

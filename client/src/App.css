@@ -51,6 +51,15 @@
 
 }
 
+.r_form{
+
+  position: fixed;
+  right: 10px;
+  bottom: 40px;
+  z-index: 1000;
+
+}
+
 .leaflet-control-container .leaflet-left {
   left: auto;
   right: 0;
