@@ -1,3 +1,9 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -51,12 +57,22 @@
 
 }
 
-.r_form{
+.btn_r_form{
 
   position: fixed;
   right: 10px;
   bottom: 40px;
   z-index: 1000;
+
+}
+
+.div_r_form{
+
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  z-index: 1000;
+  background-color: white;
 
 }
 
