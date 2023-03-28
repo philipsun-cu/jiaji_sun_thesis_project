@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function AddModal() {
+function AddModal(props) {
+  const [report, setReport] = useState(props.report);
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -27,7 +29,7 @@ function AddModal() {
               <div className="md:w-1/3">
                 <label
                   className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  for="report"
+                  htmlFor="report"
                 >
                   Report
                 </label>
@@ -37,7 +39,10 @@ function AddModal() {
                   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="report"
                   type="text"
-                  value="Type your report"
+                  value={report}
+                  onChange={(r) => {
+                    setReport(r.target.value);
+                  }}
                 />
               </div>
             </div>

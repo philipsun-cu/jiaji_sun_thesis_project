@@ -140,7 +140,7 @@ const BasicMap = () => {
       </div>
 
       <div className="btn_r_form">
-        <AddModal />
+        <AddModal report={""} />
       </div>
 
       <div className="mylocation">
