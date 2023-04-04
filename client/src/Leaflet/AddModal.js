@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
 import userGeoLocation from "./userGeoLocation";
 
 function AddModal(props) {
@@ -36,24 +39,39 @@ function AddModal(props) {
                   Report
                 </label>
               </div>
-              <div>
-                <label>Your location:</label>
-                <label>Lat:</label>
-                <label id="u_Lat"></label>
-                <label>Lng:</label>
-                <label id="u_Lng"></label>
-              </div>
-              <div className="md:w-2/3">
-                <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                  id="report"
-                  type="text"
-                  value={report}
-                  onChange={(r) => {
-                    setReport(r.target.value);
-                  }}
-                />
-              </div>
+              <Container>
+                <Row>
+                  <Col xs={10} md={7}>
+                    <label>Your location:</label>
+                  </Col>
+                  <Col xs={8} md={5}>
+                    <label>Lat:</label>
+                    <label className="l_lat" id="u_Lat"></label>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col xs={10} md={7}></Col>
+                  <Col xs={8} md={5}>
+                    <label className="l_l_lng">Lng:</label>
+                    <label className="l_lng" id="u_Lng"></label>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col xs={12} md={12}>
+                    <input
+                      className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                      id="report"
+                      type="text"
+                      value={report}
+                      onChange={(r) => {
+                        setReport(r.target.value);
+                      }}
+                    />
+                  </Col>
+                </Row>
+              </Container>
             </div>
           </form>
         </Modal.Body>
