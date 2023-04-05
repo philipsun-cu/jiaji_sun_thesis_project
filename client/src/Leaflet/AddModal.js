@@ -61,7 +61,6 @@ function AddModal(props) {
                 <Row>
                   <Col xs={12} md={12}>
                     <input
-                      className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                       id="report"
                       type="text"
                       value={report}
@@ -82,7 +81,7 @@ function AddModal(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button form="EditModal" variant="primary">
+          <Button form="EditModal" variant="primary" onClick={getreport}>
             Confirm
           </Button>
         </Modal.Footer>
@@ -92,6 +91,11 @@ function AddModal(props) {
   function u_L() {
     document.getElementById("u_Lat").innerHTML = location.coordinates.lat;
     document.getElementById("u_Lng").innerHTML = location.coordinates.lng;
+  }
+
+  function getreport() {
+    let report_content = document.getElementById("report").value;
+    console.log(report_content);
   }
 }
 
