@@ -95,6 +95,20 @@ function AddModal(props) {
 
   function getreport() {
     let report_content = document.getElementById("report").value;
+
+    let res = fetch("/api/create-report", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        lat: location.coordinates.lat,
+        lng: location.coordinates.lng,
+        report: report_content,
+      }),
+    });
+
+    handleClose();
     console.log(report_content);
   }
 }

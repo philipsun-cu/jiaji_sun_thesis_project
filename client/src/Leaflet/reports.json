@@ -1,21 +1,27 @@
 [
-    {
-        "Road": "18 St",
-        "lat": "40.007601",
-        "lng": "-105.269535",
-        "report": "snow on the sidewalk."
-    },
-    {
-        "Road": "Colorado Ave",
-        "lat": "40.008253",
-        "lng": "-105.268289",
-        "report": "snow on the sidewalk."
-    },
-    {
-        "Road": "Baker Dr",
-        "lat": "40.006549",
-        "lng": "-105.267171",
-        "report": "snow on the road."
-    }
-
+  {
+    "lat": 40.007601,
+    "lng": -105.269535,
+    "report": "snow on the sidewalk."
+  },
+  {
+    "lat": 40.008253,
+    "lng": -105.268289,
+    "report": "snow on the sidewalk."
+  },
+  {
+    "lat": 40.006549,
+    "lng": -105.267171,
+    "report": "snow on the road."
+  },
+  {
+    "lat": 40.0125321,
+    "lng": -105.2683223,
+    "report": "hello world"
+  },
+  {
+    "lat": 40.0125275,
+    "lng": -105.2683265,
+    "report": "hello"
+  }
 ]
