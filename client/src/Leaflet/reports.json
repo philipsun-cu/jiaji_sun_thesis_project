@@ -13,15 +13,5 @@
     "lat": 40.006549,
     "lng": -105.267171,
     "report": "snow on the road."
-  },
-  {
-    "lat": 40.0125321,
-    "lng": -105.2683223,
-    "report": "hello world"
-  },
-  {
-    "lat": 40.0125275,
-    "lng": -105.2683265,
-    "report": "hello"
   }
 ]
