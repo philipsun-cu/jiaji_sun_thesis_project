@@ -39,16 +39,21 @@ fetch("http://localhost:3001/api/locations")
     console.error(error);
   });
 
+const setNewreports = (data) => {
+  reports = data;
+  window.location.reload();
+};
+
 const markerIcon = new L.Icon({
   iconUrl: require("../resources/images/marker.png"),
-  iconSize: [40, 40],
+  iconSize: [35, 35],
   iconAnchor: [17, 46], //[left/right, top/bottom]
   popupAnchor: [0, -46], //[left/right, top/bottom]
 });
 
 const reportIcon = new L.Icon({
   iconUrl: require("../resources/images/reports.png"),
-  iconSize: [40, 40],
+  iconSize: [20, 20],
   iconAnchor: [17, 46], //[left/right, top/bottom]
   popupAnchor: [0, -46], //[left/right, top/bottom]
 });
@@ -140,7 +145,11 @@ const BasicMap = () => {
       </div>
 
       <div className="btn_r_form">
-        <AddModal report={""} />
+        <AddModal
+          report={""}
+          setNewreports={setNewreports}
+          locations={locations}
+        />
       </div>
 
       <div className="mylocation">

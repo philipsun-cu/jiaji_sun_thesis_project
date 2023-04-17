@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import userGeoLocation from "./userGeoLocation";
+import Form from "react-bootstrap/Form";
 
 function AddModal(props) {
   const [report, setReport] = useState(props.report);
@@ -15,9 +16,10 @@ function AddModal(props) {
   const handleShow = () => setShow(true);
   const location = userGeoLocation();
 
+  const [selects, setSelects] = useState();
   return (
     <>
-      <button onClick={handleShow}>file a reports</button>
+      <button onClick={handleShow}>File a reports</button>
 
       <Modal
         show={show}
@@ -57,7 +59,50 @@ function AddModal(props) {
                     <label className="l_lng" id="u_Lng"></label>
                   </Col>
                 </Row>
+                <Row>
+                  <Col xs={10} md={7}>
+                    Quick select:
+                    <Form.Select
+                      className="sl_L"
+                      aria-label="select"
+                      size="sm"
+                      value={selects}
+                      onChange={(e) => {
+                        // const c = setSelects(e.target.value);
+                        let optionEl = e.target.selectedOptions[0];
+                        // console.log(optionEl);
+                        console.log(e.target.value);
+                        console.log(optionEl.getAttribute("data-lat"));
+                        console.log(optionEl.getAttribute("data-lng"));
+                        // console.log(e.target);
 
+                        function q_L() {
+                          document.getElementById("u_Lat").innerHTML =
+                            optionEl.getAttribute("data-lat");
+                          document.getElementById("u_Lng").innerHTML =
+                            optionEl.getAttribute("data-lng");
+                        }
+                        q_L();
+                        console.log(document.getElementById("u_Lat").innerHTML);
+                      }}
+                    >
+                      <option id={"y_l"}>Select your location</option>
+                      {props.locations.map((location, idx) => (
+                        <option
+                          data-lat={location.lat}
+                          data-lng={location.lng}
+                          // position={[location.lat, location.lng]}
+                          key={idx}
+                        >
+                          {location.Building}
+                        </option>
+                      ))}
+                      {/* <option id={"a_l"}>ATLAS</option>
+                      <option id={"u_l"}>UMC</option> */}
+                    </Form.Select>
+                  </Col>
+                </Row>
+                <br />
                 <Row>
                   <Col xs={12} md={12}>
                     <input
@@ -102,11 +147,21 @@ function AddModal(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        lat: location.coordinates.lat,
-        lng: location.coordinates.lng,
+        lat: document.getElementById("u_Lat").innerHTML,
+        lng: document.getElementById("u_Lng").innerHTML,
         report: report_content,
       }),
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        //
+        props.setNewreports(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    console.log(res);
 
     handleClose();
     console.log(report_content);

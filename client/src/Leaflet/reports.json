@@ -1,17 +1,7 @@
 [
   {
-    "lat": 40.007601,
-    "lng": -105.269535,
-    "report": "snow on the sidewalk."
-  },
-  {
-    "lat": 40.008253,
-    "lng": -105.268289,
-    "report": "snow on the sidewalk."
-  },
-  {
-    "lat": 40.006549,
-    "lng": -105.267171,
-    "report": "snow on the road."
+    "lat": "40.0077357",
+    "lng": "-105.2700758",
+    "report": "ice on the sidewalk"
   }
 ]

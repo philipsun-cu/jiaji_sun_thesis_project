@@ -43,9 +43,7 @@ app.post("/api/create-report", (req, res) => {
     "./client/src/Leaflet/reports.json",
     JSON.stringify(jsonObj, null, 2)
   );
-  res.send(
-    JSON.stringify({ status: 200, error: null, response: "Report recorded." })
-  );
+  res.json(jsonObj);
 });
 
 app.get("/api/locations", (req, res) => {
