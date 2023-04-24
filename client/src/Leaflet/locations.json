@@ -1,0 +1,38 @@
+[
+    {
+        "Building": "ATLAS",
+        "lat": "40.0077",
+        "lng": "-105.2700"
+    },
+    {
+        "Building": "UMC",
+        "lat": "40.0067",
+        "lng": "-105.2715"
+    },
+    {
+        "Building": "C4C",
+        "lat": "40.0044",
+        "lng": "-105.2649"
+    },
+    {
+        "Building": "Student Recreation Center",
+        "lat": "40.0103",
+        "lng": "-105.2691"
+    },
+    {
+        "Building": "Folsom Field",
+        "lat": "40.0095",
+        "lng": "-105.2669"
+    },
+    {
+        "Building": "Department of Computer Science",
+        "lat": "40.0068",
+        "lng": "-105.2628"
+    },
+    {
+        "Building": "Norlin Library",
+        "lat": "40.0087",
+        "lng": "-105.2708"
+    }
+
+]
