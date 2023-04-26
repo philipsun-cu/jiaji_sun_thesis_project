@@ -93,7 +93,7 @@ const BasicMap = () => {
 
       <div className="row">
         <div className="col text-center">
-          <h2>Interact Map for CUB members</h2>
+          <h2>Interaction Map for CUB members</h2>
           <p>Their safey, your safety, my safety </p>
           <div className="col">
             <MapContainer
